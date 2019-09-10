@@ -101,10 +101,7 @@ namespace AssignmentFromWesAndDave
                     _sampleSentence[i] = '?';
                 }
                 Console.WriteLine(_sampleSentence[i]);
-            }
-
-            
-            
+            }         
         }
 
         public void RandomNumbers()
@@ -122,7 +119,5 @@ namespace AssignmentFromWesAndDave
                 // Whastever is inside of the index (i) from the array (randomNumbers) it equal a random number from 0 to 345 (0, 345)
             }  
         }
-
-
     }
 }
