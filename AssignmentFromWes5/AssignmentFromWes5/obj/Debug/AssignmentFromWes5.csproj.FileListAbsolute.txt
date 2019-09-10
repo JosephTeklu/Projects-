@@ -1,0 +1,7 @@
+C:\Users\jteklu\source\repos\AssignmentFromWes5\AssignmentFromWes5\bin\Debug\AssignmentFromWes5.exe.config
+C:\Users\jteklu\source\repos\AssignmentFromWes5\AssignmentFromWes5\bin\Debug\AssignmentFromWes5.exe
+C:\Users\jteklu\source\repos\AssignmentFromWes5\AssignmentFromWes5\bin\Debug\AssignmentFromWes5.pdb
+C:\Users\jteklu\source\repos\AssignmentFromWes5\AssignmentFromWes5\obj\Debug\AssignmentFromWes5.csprojAssemblyReference.cache
+C:\Users\jteklu\source\repos\AssignmentFromWes5\AssignmentFromWes5\obj\Debug\AssignmentFromWes5.csproj.CoreCompileInputs.cache
+C:\Users\jteklu\source\repos\AssignmentFromWes5\AssignmentFromWes5\obj\Debug\AssignmentFromWes5.exe
+C:\Users\jteklu\source\repos\AssignmentFromWes5\AssignmentFromWes5\obj\Debug\AssignmentFromWes5.pdb
