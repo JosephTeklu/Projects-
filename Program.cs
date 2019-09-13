@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -35,12 +35,13 @@ namespace AssignmentFromWesAndDave2
                     continue;
                 }
             }
-
             
+            // high, low, correct, m_numberOFGuesses are variables setup to be used later
             bool high = false;
             bool low = false;
             bool correct = false;
             int m_numberOfGuesses = 0;
+
             while (true)
             {
                 Console.WriteLine("Alrigt, so now you have to guess the correct number between 0 and " + m_upperLimit);
@@ -50,19 +51,28 @@ namespace AssignmentFromWesAndDave2
                 bool _numbOrnot = Int32.TryParse(m__guess, out m_guess);
                 if (_numbOrnot == true && m_guess < m_upperLimit)
                 {
+                    // if (_numbOrnot) is a number and if (m_guess) is less than the upper limit
+
+                    // send the guess to the property called (Guess)
                     Calling.Guess = m_guess;
+
+                    // the variable (m_numberOfGuesses) becomes what the property (NumberOfGuesses) returns
                     m_numberOfGuesses = Calling.NumberOfGuesses;
+
+                    // sending (m_guess) to (high, low, correct) methods
                     high = Calling.CheckingHigh(m_guess);
                     low = Calling.CheckingLow(m_guess);
                     correct = Calling.CheckingCorrect(m_guess);
                     
                 }
                 else if (_numbOrnot == false | m_guess > m_upperLimit)
-                {
+                {   
+                    // if (_numbOrnot) is false or if (m_guess) is less than the upper limit
                     Console.WriteLine("Oh! Your guess is above the limit you've set \n try again");
                     m__guess = Console.ReadLine();
                 }
 
+                // if ((high) == true) 
                 if (high)
                 {
                     Console.WriteLine("Ohh your guess is too high!");
@@ -95,16 +105,19 @@ namespace AssignmentFromWesAndDave2
         private int m_guess;
         public int m_numberOfGuesses;
 
-        //public int guess { get { return guess; } set { m_guess = value; m_numberOfGuesses++; } }          // Am I doing this correct????
         public int Guess
         {
             get
             {
+                // returns (m_guess)
                 return m_guess;
             }
             set
             {
+                // (m_guess) is equal to (value) which value is what is being sent down from the main method
                 m_guess = value;
+
+                // for every guess passed down, one more would be added to (m_numberOfGuesses)
                 m_numberOfGuesses++;
             }
         }
@@ -113,23 +126,40 @@ namespace AssignmentFromWesAndDave2
         {
             get
             {
+                // the total number of guesses is returned to the main method
                 return m_numberOfGuesses;
             }
         }
 
+        /// <summary>
+        /// This constructor assigns the field (m_upperLimit)
+        /// </summary>
+        /// <param name="upperLimit"></param>
         public Number_Data_Storing_And_Calculactions(int upperLimit)
         {
             // assigning the field m_upperLimit
             m_upperLimit = upperLimit;
+
+            // you need to call the method inside of the constructor for it to run
             CalculatingTheRandomNumber();
         }
 
+        /// <summary>
+        /// This method assigns the random number from 0 to the (m_upperLimit)
+        /// </summary>
         public void CalculatingTheRandomNumber()
         {
             // assigning the field m_randomNumber
-            m_randomNumber = random.Next(0, m_upperLimit);         
+            m_randomNumber = random.Next(0, m_upperLimit);
+
+            //Console.WriteLine(m_randomNumber);
         }
 
+        /// <summary>
+        /// This method checks if the guess is higher than the random number. 
+        /// </summary>
+        /// <param name="guess"></param>
+        /// <returns></returns>
         public bool CheckingHigh(int guess)
         {
             if (m_guess > m_randomNumber)
@@ -139,6 +169,11 @@ namespace AssignmentFromWesAndDave2
             return false;
         }
 
+        /// <summary>
+        /// This method checks if the guess is lower than the random number.
+        /// </summary>
+        /// <param name="guess"></param>
+        /// <returns></returns>
         public bool CheckingLow(int guess)
         {
             if (m_guess < m_randomNumber)
@@ -148,6 +183,11 @@ namespace AssignmentFromWesAndDave2
             return false;
         }
 
+        /// <summary>
+        /// This method checks if the guess is guessed right.
+        /// </summary>
+        /// <param name="guess"></param>
+        /// <returns></returns>
         public bool CheckingCorrect(int guess)
         {
             if (m_guess == m_randomNumber)
