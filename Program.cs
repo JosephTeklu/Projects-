@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,63 +28,78 @@ namespace AssignmentFromWesAndDave2
                     Calling = new Number_Data_Storing_And_Calculactions(m_upperLimit);
                     break;
                 }
-                else if (numbOrNot == false | m_upperLimit < 10)
+                else if (numbOrNot == false | m_upperLimit <= 10)
                 {
                     Console.WriteLine("Please enter in a number that is larger than 10.");
                     m_highestNumber = Console.ReadLine();
                     continue;
                 }
             }
-            
-            // high, low, correct, m_numberOFGuesses are variables setup to be used later
+
+            Console.WriteLine("Alrigt, so now you have to guess the correct number between 0 and " + m_upperLimit);
+            string m__guess = Console.ReadLine();
+
             bool high = false;
             bool low = false;
             bool correct = false;
+            bool m_guessIsAboveUpperLimit = false;
+            bool m_guessIsUpperLimit = false;
+
             int m_numberOfGuesses = 0;
 
             while (true)
             {
-                Console.WriteLine("Alrigt, so now you have to guess the correct number between 0 and " + m_upperLimit);
-                string m__guess = Console.ReadLine();
-
                 int m_guess;
-                bool _numbOrnot = Int32.TryParse(m__guess, out m_guess);
-                if (_numbOrnot == true && m_guess < m_upperLimit)
-                {
-                    // if (_numbOrnot) is a number and if (m_guess) is less than the upper limit
+                bool m_numbOrnot = Int32.TryParse(m__guess, out m_guess);
 
-                    // send the guess to the property called (Guess)
-                    Calling.Guess = m_guess;
+                Calling.Guess = m_guess;
 
                     // the variable (m_numberOfGuesses) becomes what the property (NumberOfGuesses) returns
                     m_numberOfGuesses = Calling.NumberOfGuesses;
 
-                    // sending (m_guess) to (high, low, correct) methods
+                    // sending the guess (m_guess) to 
                     high = Calling.CheckingHigh(m_guess);
                     low = Calling.CheckingLow(m_guess);
                     correct = Calling.CheckingCorrect(m_guess);
-                    
-                }
-                else if (_numbOrnot == false | m_guess > m_upperLimit)
-                {   
-                    // if (_numbOrnot) is false or if (m_guess) is less than the upper limit
-                    Console.WriteLine("Oh! Your guess is above the limit you've set \n try again");
+                    m_guessIsAboveUpperLimit = Calling.CheckingIfGuessIsAboveUpperLimit(m_guess);
+                                  
+                
+                    m_guessIsUpperLimit = Calling.CheckingIfGuessIsUpperLimit(m_guess);
+
+                if (m_numbOrnot == false)
+                {
+                    Console.WriteLine("Please enter in a number that is from 0 to " + m_upperLimit);
                     m__guess = Console.ReadLine();
                 }
-
-                // if ((high) == true) 
-                if (high)
+                else if (m_guessIsAboveUpperLimit)
+                { 
+                    Console.WriteLine("Ohh your gussed above the upper limit! Try again!");
+                    m__guess = Console.ReadLine();
+                }
+                else if (high)
                 {
-                    Console.WriteLine("Ohh your guess is too high!");
+                    Console.WriteLine("Ohh your guess is too high! Try again!");
+                    m__guess = Console.ReadLine();
                 }
                 else if (low)
                 {
-                    Console.WriteLine("Ohh your guess is too low!");
+                    Console.WriteLine("Ohh your guess is too low! Try again!");
+                    m__guess = Console.ReadLine();
+                }
+                else if (m_guessIsUpperLimit)
+                {
+                    Console.WriteLine("Ohh you just guessed your upper limit! \n Try again!");
+                    m__guess = Console.ReadLine();
                 }
                 else if (correct)
                 {
-                    Console.WriteLine("Correct!" + " You have guessed correct with " + m_numberOfGuesses + " guesses.");
+                    Console.WriteLine("Correct! \n You have guessed correct with " + m_numberOfGuesses + " guesses.");
                     break;
+                }
+                else
+                {
+                    Console.WriteLine("Please enter in a guess from 0 to " + m_upperLimit);
+                    m__guess = Console.ReadLine();
                 }
             }
         }          
@@ -103,7 +118,7 @@ namespace AssignmentFromWesAndDave2
         Random random = new Random();
 
         private int m_guess;
-        public int m_numberOfGuesses;
+        public int m_numberOfGuesses = 0;
 
         public int Guess
         {
@@ -118,7 +133,7 @@ namespace AssignmentFromWesAndDave2
                 m_guess = value;
 
                 // for every guess passed down, one more would be added to (m_numberOfGuesses)
-                m_numberOfGuesses++;
+                m_numberOfGuesses ++;
             }
         }
 
@@ -151,8 +166,30 @@ namespace AssignmentFromWesAndDave2
         {
             // assigning the field m_randomNumber
             m_randomNumber = random.Next(0, m_upperLimit);
+            Console.WriteLine(m_randomNumber);
+        }
 
-            //Console.WriteLine(m_randomNumber);
+        public bool CheckingIfGuessIsAboveUpperLimit(int guess)
+        {
+            if (m_guess > m_upperLimit)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// This method checks if the guess is the upper limit set by the user.
+        /// </summary>
+        /// <param name="guess"></param>
+        /// <returns></returns>
+        public bool CheckingIfGuessIsUpperLimit(int guess)
+        {
+            if (m_guess == m_upperLimit)
+            {
+                return true;
+            }
+            return false;
         }
 
         /// <summary>
@@ -162,7 +199,7 @@ namespace AssignmentFromWesAndDave2
         /// <returns></returns>
         public bool CheckingHigh(int guess)
         {
-            if (m_guess > m_randomNumber)
+            if (m_guess > m_randomNumber) 
             {
                 return true;
             }
@@ -195,6 +232,6 @@ namespace AssignmentFromWesAndDave2
                 return true;
             }
             return false;
-        }
+        }       
     }
 }
