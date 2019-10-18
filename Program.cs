@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AssignmentFromWesAndDave2
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             int m_upperLimit = 0;
             Number_Data_Storing_And_Calculactions Calling;
@@ -166,7 +162,7 @@ namespace AssignmentFromWesAndDave2
         {
             // assigning the field m_randomNumber
             m_randomNumber = random.Next(0, m_upperLimit);
-            Console.WriteLine(m_randomNumber);
+            //Console.WriteLine(m_randomNumber);
         }
 
         public bool CheckingIfGuessIsAboveUpperLimit(int guess)
