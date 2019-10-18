@@ -1,14 +1,10 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AssignmentFromWesAndDave2
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             int m_upperLimit = 0;
             Number_Data_Storing_And_Calculactions Calling;
@@ -54,17 +50,17 @@ namespace AssignmentFromWesAndDave2
 
                 Calling.Guess = m_guess;
 
-                    // the variable (m_numberOfGuesses) becomes what the property (NumberOfGuesses) returns
-                    m_numberOfGuesses = Calling.NumberOfGuesses;
+                // the variable (m_numberOfGuesses) becomes what the property (NumberOfGuesses) returns
+                m_numberOfGuesses = Calling.NumberOfGuesses;
 
-                    // sending the guess (m_guess) to 
-                    high = Calling.CheckingHigh(m_guess);
-                    low = Calling.CheckingLow(m_guess);
-                    correct = Calling.CheckingCorrect(m_guess);
-                    m_guessIsAboveUpperLimit = Calling.CheckingIfGuessIsAboveUpperLimit(m_guess);
-                                  
-                
-                    m_guessIsUpperLimit = Calling.CheckingIfGuessIsUpperLimit(m_guess);
+                // sending the guess (m_guess) to 
+                high = Calling.CheckingHigh(m_guess);
+                low = Calling.CheckingLow(m_guess);
+                correct = Calling.CheckingCorrect(m_guess);
+                m_guessIsAboveUpperLimit = Calling.CheckingIfGuessIsAboveUpperLimit(m_guess);
+
+
+                m_guessIsUpperLimit = Calling.CheckingIfGuessIsUpperLimit(m_guess);
 
                 if (m_numbOrnot == false)
                 {
@@ -72,7 +68,7 @@ namespace AssignmentFromWesAndDave2
                     m__guess = Console.ReadLine();
                 }
                 else if (m_guessIsAboveUpperLimit)
-                { 
+                {
                     Console.WriteLine("Ohh your gussed above the upper limit! Try again!");
                     m__guess = Console.ReadLine();
                 }
@@ -94,7 +90,7 @@ namespace AssignmentFromWesAndDave2
                 else if (correct)
                 {
                     Console.WriteLine("Correct! \n You have guessed correct with " + m_numberOfGuesses + " guesses.");
-                    break;
+                    Console.ReadLine();
                 }
                 else
                 {
@@ -102,7 +98,7 @@ namespace AssignmentFromWesAndDave2
                     m__guess = Console.ReadLine();
                 }
             }
-        }          
+        }
     }
 
     /// <summary>
@@ -133,7 +129,7 @@ namespace AssignmentFromWesAndDave2
                 m_guess = value;
 
                 // for every guess passed down, one more would be added to (m_numberOfGuesses)
-                m_numberOfGuesses ++;
+                m_numberOfGuesses++;
             }
         }
 
@@ -165,7 +161,7 @@ namespace AssignmentFromWesAndDave2
         public void CalculatingTheRandomNumber()
         {
             // assigning the field m_randomNumber
-            m_randomNumber = random.Next(0, m_upperLimit);
+            m_randomNumber = random.Next(1, m_upperLimit);
         }
 
         public bool CheckingIfGuessIsAboveUpperLimit(int guess)
@@ -198,7 +194,7 @@ namespace AssignmentFromWesAndDave2
         /// <returns></returns>
         public bool CheckingHigh(int guess)
         {
-            if (m_guess > m_randomNumber) 
+            if (m_guess > m_randomNumber)
             {
                 return true;
             }
@@ -231,6 +227,6 @@ namespace AssignmentFromWesAndDave2
                 return true;
             }
             return false;
-        }       
+        }
     }
 }
