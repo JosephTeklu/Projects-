@@ -1,0 +1,99 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TelephoneGame
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {      
+            Switchboard switchboard = new Switchboard();
+
+            Phone phone = new Phone(switchboard);
+            phone.m_phoneNumberForPhone = 7206541234;
+
+
+            Phone phone2 = new Phone(switchboard);
+            phone2.m_phoneNumberForPhone = 6549876523;
+
+            Phone phone3 = new Phone(switchboard);
+            phone3.m_phoneNumberForPhone = 333333333;
+
+            phone.DialPhone(6549876523);
+            phone2.DialPhone(7206541234);
+        }
+        
+    }
+
+    public class Phone
+    {   
+        // declaring the (Switchboard) class
+        public Switchboard m_switchboard;
+
+        // the phone number for this class
+        public long m_phoneNumberForPhone;
+
+        // sending phone number to the (Switchboard) class
+        public void DialPhone(long phonenumber)
+        {
+            // in the class (Switchboard) that has the method called (makeCall) int it, send the phone number.
+            Console.WriteLine("my phone number is " + m_phoneNumberForPhone);
+            m_switchboard.makeCall(phonenumber);
+
+            //Subscriber();
+        }
+
+        // The (Switchboard) class is the argument passed down in the constructor (Phone)
+        public Phone(Switchboard switchboard)
+        {
+            // the instance of the Switchboard class called (m_switchboard) is now initialized to the class (switchboard) that is passed down to it/the argument of the method (Phone)
+            m_switchboard = switchboard;
+
+            // subscription of event.
+            switchboard.someoneCalled += Subscriber;
+            // In the instance of the class (Switchboard) that has the event called (someoneCalled) in it, the method called (Subscriber) will become subscribed to it.
+        }
+
+        // the method that is subscribing to the event
+        public void Subscriber(object sender, EventArgs e)
+        {
+            // making another instance of (Switchboard) and sending the object called (sender) as Swtichboard to see what is inside of the class (Switchboard).
+            Switchboard InsideOfSwitchboard = sender as Switchboard;
+
+            // if the phone number from this class, is the same as the phone number that is inside of the class (Switchboard) in the method called (phonenumberThatJustGotCalled)
+            if (m_phoneNumberForPhone == InsideOfSwitchboard.m_phoneNumberThatGotCalled)  
+            {
+                Console.WriteLine("ring ring ring " + InsideOfSwitchboard.m_phoneNumberThatGotCalled);
+            }
+            else
+            {
+                Console.WriteLine("I am a lonly programmer, no one want to talk to my number" + m_phoneNumberForPhone);
+            }
+        }
+    }
+
+    public class Switchboard
+    { 
+        // the event
+        public event EventHandler someoneCalled;
+        
+        // the field that holds the phone numberthat got passed down.
+        public long m_phoneNumberThatGotCalled;
+
+        public void makeCall(long phonenumber)
+        {
+            // the phone number that is passed down to this method is assigned to the field (m_phoneNumberThatGotCalled)
+            m_phoneNumberThatGotCalled = phonenumber;
+
+            // firing the event
+            if (someoneCalled != null)
+            {
+                someoneCalled(this, EventArgs.Empty);
+                
+            }
+        }
+    }
+}     
