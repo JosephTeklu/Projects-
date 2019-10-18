@@ -1,7 +1,0 @@
-C:\Users\jteklu\source\repos\AssignmentFromWesAndDave\AssignmentFromWesAndDave\bin\Debug\AssignmentFromWesAndDave.exe.config
-C:\Users\jteklu\source\repos\AssignmentFromWesAndDave\AssignmentFromWesAndDave\bin\Debug\AssignmentFromWesAndDave.exe
-C:\Users\jteklu\source\repos\AssignmentFromWesAndDave\AssignmentFromWesAndDave\bin\Debug\AssignmentFromWesAndDave.pdb
-C:\Users\jteklu\source\repos\AssignmentFromWesAndDave\AssignmentFromWesAndDave\obj\Debug\AssignmentFromWesAndDave.csprojAssemblyReference.cache
-C:\Users\jteklu\source\repos\AssignmentFromWesAndDave\AssignmentFromWesAndDave\obj\Debug\AssignmentFromWesAndDave.csproj.CoreCompileInputs.cache
-C:\Users\jteklu\source\repos\AssignmentFromWesAndDave\AssignmentFromWesAndDave\obj\Debug\AssignmentFromWesAndDave.exe
-C:\Users\jteklu\source\repos\AssignmentFromWesAndDave\AssignmentFromWesAndDave\obj\Debug\AssignmentFromWesAndDave.pdb
