@@ -7,8 +7,8 @@ namespace AssignmentFromWesAndDave
         public static void Main(string[] args)
         {
             Assignment Questions = new Assignment();
-            //Questions.MovingLetterA();
-            //Questions.UpperAndLowerCase();
+            Questions.MovingLetterA();
+            Questions.UpperAndLowerCase();
             Questions.RandomNumbers();
         }
     }
@@ -57,8 +57,7 @@ namespace AssignmentFromWesAndDave
             }
         }
         /// <summary>
-        /// This method converts uppercase letters to the letter 'U', lowercase letters to the letter 'L' and other characters that are not space marks to the question mark (?)
-        /// 
+        /// This method converts uppercase letters to the letter 'U', lowercase letters to the letter 'L' and other characters that are not space marks to the question mark (?) 
         /// Create an array with 10 random numbers. Find the number of times that each digit occurs in all of the numbers. Find the median number based upon the digit occurrences.
         /// </summary>
         public void UpperAndLowerCase()
