@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Zoo
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             AnimalAdoptionCenter m_animalAdoptionCenter = new AnimalAdoptionCenter();
             DenverZoo(m_animalAdoptionCenter);
@@ -40,21 +36,6 @@ namespace Zoo
                     break;
                 }
             }
-        }
-        private void notes()
-        {
-            // 2 zoos whant the same baby?
-            // show the want and need at first then at the end
-
-            /*
-            * there are a number of zoos
-            * they have an array of animals that they already have
-            * they have an array of animals that they want
-            * when a zoo has a baby they need to make an annoucment (fire an event) so all other zoos know
-            * if another zoo wants it they say I want your animal
-            * if the same animal is born a second time then the want is changed for the zoo that got the animal
-            * or maybe no one wants your baby
-            * */
         }
 
         private static void DenverZoo(AnimalAdoptionCenter m_animalAdoptionCenter)
@@ -97,6 +78,7 @@ namespace Zoo
         public Zoo(AnimalAdoptionCenter animalAdoptionCenter)
         {
             m_animalAdoptionCenter = animalAdoptionCenter;
+            // subscribing to the event with the method (ZooSubscriber)
             m_animalAdoptionCenter.IWantAnAnimalEvent += ZooSubscriber;
         }
 
@@ -221,7 +203,7 @@ namespace Zoo
 
     public class AnimalAdoptionCenter
     {
-        // the event
+        // the event that all of the zoos are subscribed to
         public event EventHandler IWantAnAnimalEvent;
 
         // the Zoo who has the baby
@@ -235,21 +217,6 @@ namespace Zoo
             if (IWantAnAnimalEvent != null)
             {
                 IWantAnAnimalEvent(this, EventArgs.Empty);
-            }
-        }
-    }
-
-    public class test
-    {
-        public test()
-        {
-            List<string> ls = new List<string>();
-            ls.Add("Hello");
-
-            for (int i = 0; i < ls.Capacity; i++)
-            {
-                //Console.WriteLine(i);
-                //Console.WriteLine(ls[i]);
             }
         }
     }
