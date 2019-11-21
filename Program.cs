@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Zoo
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {   // creating an instance of the Animal Adoption Center
             AnimalAdoptionCenter m_animalAdoptionCenter = new AnimalAdoptionCenter();
 
@@ -16,6 +12,8 @@ namespace Zoo
             DenverZoo(m_animalAdoptionCenter);
             SanFranZoo(m_animalAdoptionCenter);
             AtlantaZoo(m_animalAdoptionCenter);
+            
+            // enable this (Boston Zoo) if you want to expirement yourself! :)
             //BostonZoo(m_animalAdoptionCenter);
             while (true)
             {   // asking the user what baby should be born and sending it to the animal adoption center
@@ -48,22 +46,7 @@ namespace Zoo
                 }
             }
         }
-        private void notes()
-        {
-            // 2 zoos whant the same baby?
-            // show the want and need at first then at the end
-
-            /*
-            * there are a number of zoos
-            * they have an array of animals that they already have
-            * they have an array of animals that they want
-            * when a zoo has a baby they need to make an annoucment (fire an event) so all other zoos know
-            * if another zoo wants it they say I want your animal
-            * if the same animal is born a second time then the want is changed for the zoo that got the animal
-            * or maybe no one wants your baby
-            * */
-        }
-
+        
         private static void BostonZoo(AnimalAdoptionCenter m_animalAdoptionCenter)
         {
             Zoo BostonZoo = new Zoo(m_animalAdoptionCenter);
@@ -127,10 +110,11 @@ namespace Zoo
         // the zoo Subscriber
         public void ZooSubscriber(object sender, EventArgs e)
         {
-            // if the supplied argument is null
+            // if the array is null
             if (WantsAnimals == null)
             {
                 // manually creating an error to stop the execution. 
+                // this error helps another developer to know what is needed to create a zoo
                 throw new ApplicationException("WantsAnimals");
             }
             // the WantsAnimals array needs to be set
@@ -139,7 +123,8 @@ namespace Zoo
             if (HasAnimals == null)
             //the animal adoption center in this class is equal to the one passed down
             {
-                // manually creating an error to stop the execution. 
+                // manually creating an error to stop the execution.
+                // this error helps another developer to know what is needed to create a zoo
                 throw new ApplicationException("HasAnimals");
             }
             // the HasAnimals array needs to be set
