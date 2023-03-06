@@ -19,54 +19,6 @@ namespace CS_WebScraperLearning
     {            
         static void Main(string[] args)
         {
-            // PREVIOUS WEB SCRAPING TUTORIAL
-            {
-
-                //var _url = "https://www.google.com";
-
-                //// making an instance of the HttpClient class
-                //var _httpClient = new HttpClient();
-
-                //// sending the url that we want to get the uri from 
-                //var _html = _httpClient.GetStringAsync(_url);
-
-                //Console.WriteLine(_html.Result);         
-
-
-
-
-                ////Extract the text and save it into result.txt
-                //var result = driver.FindElementByXPath("//div[@id='case_login']/h3").Text;
-                //File.WriteAllText("result.txt", result);
-
-                //// Take a screenshot and save it into screen.png
-                //driver.GetScreenshot().SaveAsFile(@"screen.png", ScreenshotImageFormat.Png);
-            }
-
-            // going to cherry creek website
-            {
-                //// creating a new instance of the chrome driver class
-                //var m_chromeDriver = new ChromeDriver();
-
-                //// go the url given
-                //m_chromeDriver.Navigate().GoToUrl("http://my.cherrycreekschools.org/LoginPolicy.jsp");
-
-                //// looks for the names given on inspect element and saves them to their variables
-                //var userNameField = m_chromeDriver.FindElementByName("sAMAccountName");
-                //var userPasswordField = m_chromeDriver.FindElementByName("[password]");
-
-                //// looks for the button that is called (login)
-                //var loginButton = m_chromeDriver.FindElementByName("I1");
-
-                //// enters in the strings  for the username and for the password
-                //userNameField.SendKeys("jteklu");
-                //userPasswordField.SendKeys("Chynachang119");
-
-                //// clicks the login button that it finds
-                //loginButton.Click();
-
-                //Console.ReadLine();
-            }
 
             // creating a new instance of the chrome driver class
             var _chromeDriver = new ChromeDriver();
@@ -110,7 +62,7 @@ namespace CS_WebScraperLearning
             var chromeDriver = new ChromeDriver();
 
             var _streetButton = chromeDriver.FindElementById("divStreet");
-            _streetButton.SendKeys("17343 E Wagontrail PKWY");
+            _streetButton.SendKeys("1600 Penn Ave");
 
             var _cityButton = chromeDriver.FindElementById("divCity");
             _cityButton.SendKeys("Aurora");
@@ -120,8 +72,4 @@ namespace CS_WebScraperLearning
         }
     }
 
-    public class Delivery
-    {
-
-    }
 }
