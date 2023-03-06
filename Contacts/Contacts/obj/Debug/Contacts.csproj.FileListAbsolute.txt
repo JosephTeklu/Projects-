@@ -1,0 +1,6 @@
+C:\Users\jteklu\source\repos\Contacts\Contacts\bin\Debug\Contacts.exe.config
+C:\Users\jteklu\source\repos\Contacts\Contacts\bin\Debug\Contacts.exe
+C:\Users\jteklu\source\repos\Contacts\Contacts\bin\Debug\Contacts.pdb
+C:\Users\jteklu\source\repos\Contacts\Contacts\obj\Debug\Contacts.csprojAssemblyReference.cache
+C:\Users\jteklu\source\repos\Contacts\Contacts\obj\Debug\Contacts.exe
+C:\Users\jteklu\source\repos\Contacts\Contacts\obj\Debug\Contacts.pdb

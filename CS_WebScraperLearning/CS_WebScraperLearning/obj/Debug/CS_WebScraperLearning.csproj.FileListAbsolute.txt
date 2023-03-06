@@ -1,0 +1,14 @@
+C:\Users\jteklu\source\repos\CS_WebScraperLearning\CS_WebScraperLearning\bin\Debug\CS_WebScraperLearning.exe.config
+C:\Users\jteklu\source\repos\CS_WebScraperLearning\CS_WebScraperLearning\bin\Debug\CS_WebScraperLearning.exe
+C:\Users\jteklu\source\repos\CS_WebScraperLearning\CS_WebScraperLearning\bin\Debug\CS_WebScraperLearning.pdb
+C:\Users\jteklu\source\repos\CS_WebScraperLearning\CS_WebScraperLearning\obj\Debug\CS_WebScraperLearning.csprojAssemblyReference.cache
+C:\Users\jteklu\source\repos\CS_WebScraperLearning\CS_WebScraperLearning\obj\Debug\CS_WebScraperLearning.csproj.CoreCompileInputs.cache
+C:\Users\jteklu\source\repos\CS_WebScraperLearning\CS_WebScraperLearning\obj\Debug\CS_WebScraperLearning.exe
+C:\Users\jteklu\source\repos\CS_WebScraperLearning\CS_WebScraperLearning\obj\Debug\CS_WebScraperLearning.pdb
+C:\Users\jteklu\source\repos\CS_WebScraperLearning\CS_WebScraperLearning\bin\Debug\Selenium.WebDriverBackedSelenium.dll
+C:\Users\jteklu\source\repos\CS_WebScraperLearning\CS_WebScraperLearning\bin\Debug\WebDriver.dll
+C:\Users\jteklu\source\repos\CS_WebScraperLearning\CS_WebScraperLearning\bin\Debug\WebDriver.Support.dll
+C:\Users\jteklu\source\repos\CS_WebScraperLearning\CS_WebScraperLearning\bin\Debug\Selenium.WebDriverBackedSelenium.xml
+C:\Users\jteklu\source\repos\CS_WebScraperLearning\CS_WebScraperLearning\bin\Debug\WebDriver.xml
+C:\Users\jteklu\source\repos\CS_WebScraperLearning\CS_WebScraperLearning\bin\Debug\WebDriver.Support.xml
+C:\Users\jteklu\source\repos\CS_WebScraperLearning\CS_WebScraperLearning\obj\Debug\CS_WebScraperLearning.csproj.CopyComplete
